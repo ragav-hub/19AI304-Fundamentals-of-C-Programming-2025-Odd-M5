@@ -39,7 +39,53 @@
 ### Step 12: 
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void swapv(int x, int y)
+{
+    int temp;
+    temp = x;
+    x = y;
+    y = temp;
+
+    printf("Values inside swapv function after swapping: x = %d, y = %d\n", x, y);
+}
+
+void swapr(int *x, int *y)
+{
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+
+    printf("Values inside swapr function after swapping: a = %d, b = %d\n", *x, *y);
+}
+
+int main()
+{
+    int a, b;
+
+    printf("Enter value of a: ");
+    scanf("%d", &a);
+
+    printf("Enter value of b: ");
+    scanf("%d", &b);
+
+    printf("Before calling swapv: a = %d, b = %d\n", a, b);
+    swapv(a, b);
+    printf("After calling swapv: a = %d, b = %d\n\n", a, b);
+
+    printf("Before calling swapr: a = %d, b = %d\n", a, b);
+    swapr(&a, &b);
+    printf("After calling swapr: a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+```
 # Output:
+<img width="664" height="419" alt="image" src="https://github.com/user-attachments/assets/05c22947-83b2-47fa-a1ac-4ca54408c9fa" />
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -77,7 +123,28 @@
 ### Step 10:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+int fibo(int x) {
+    if(x==0 || x==1)
+        return x;
+    return fibo(x-1) + fibo(x-2);
+}
+
+int main() {
+    int n,i;
+    printf("Enter a positive integer: ");
+    scanf("%d",&n);
+    printf("Fibonacci series:\n");
+    for(i=0;i<n;i++)
+        printf("%d ",fibo(i));
+    return 0;
+}
+```
 # Output:
+<img width="477" height="221" alt="image" src="https://github.com/user-attachments/assets/1a451c42-19fd-46ae-9f75-02bec0888e5d" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -119,7 +186,41 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 12:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void printEvenOdd(int cur, int limit)
+{
+    if(cur > limit)
+        return;
+
+    if(cur == limit)
+        printf("%d", cur);
+    else
+        printf("%d, ", cur);
+
+    printEvenOdd(cur + 2, limit);
+}
+
+int main()
+{
+    int lowerLimit, upperLimit;
+
+    printf("Enter Lower Limit: ");
+    scanf("%d", &lowerLimit);
+
+    printf("Enter Upper Limit: ");
+    scanf("%d", &upperLimit);
+
+    printf("The sequence is: ");
+    printEvenOdd(lowerLimit, upperLimit);
+
+    return 0;
+}
+```
 # Output:
+<img width="906" height="219" alt="image" src="https://github.com/user-attachments/assets/97a5d089-3950-40ff-8ca2-bbecf0c028ee" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -161,7 +262,45 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 11:
   Stop
 # Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *ptr, n, i, sum = 0;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    ptr = calloc(n, sizeof(int));
+
+    if(ptr == NULL)
+    {
+        printf("Memory allocation failed");
+        return 0;
+    }
+
+    printf("Enter %d integers:\n", n);
+
+    for(i = 0; i < n; i++)
+        scanf("%d", ptr + i);
+
+    for(i = 0; i < n; i++)
+        sum = sum + *(ptr + i);
+
+    printf("Sum of the entered numbers = %d", sum);
+
+    free(ptr);
+
+    return 0;
+}
+```
+
 # Output:
+<img width="400" height="370" alt="image" src="https://github.com/user-attachments/assets/1ab9b769-58dc-435e-8e31-5a7e0589e9df" />
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -197,6 +336,40 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 10:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void printEvenOdd(int cur, int limit)
+{
+    if(cur > limit)
+        return;
+
+    if(cur == limit)
+        printf("%d", cur);
+    else
+        printf("%d, ", cur);
+
+    printEvenOdd(cur + 2, limit);
+}
+
+int main()
+{
+    int lowerLimit, upperLimit;
+
+    printf("Enter Lower Limit: ");
+    scanf("%d", &lowerLimit);
+
+    printf("Enter Upper Limit: ");
+    scanf("%d", &upperLimit);
+
+    printf("The sequence is: ");
+    printEvenOdd(lowerLimit, upperLimit);
+
+    return 0;
+}
+```
 # Output:
+<img width="395" height="604" alt="image" src="https://github.com/user-attachments/assets/b31a66b1-1576-4e17-ac74-65f94cfe51b6" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
